@@ -39,8 +39,12 @@ global_page = st.Page(
 patient_page = st.Page(
     "patient.py",
     title="Search a given rghc record",
-    icon=":material/deployed_code_account:",
+    icon=":material/saved_search:",
 )
 
-pg = st.navigation([global_page, patient_page])
+tazi_page = st.Page(
+    "tazi_ui.py", title="Consult Tazi Records", icon=":material/deployed_code_account:"
+)
+
+pg = st.navigation([global_page, patient_page, tazi_page])
 pg.run()
