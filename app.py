@@ -3,13 +3,14 @@ import streamlit as st
 from utils import load_csv
 
 # ---------- Page setup ----------
-st.set_page_config(
-    page_title="Search engine", page_icon=":material/search:", layout="wide"
-)
+st.set_page_config(page_title="EMR-UI", page_icon=":material/search:", layout="wide")
 
 # ---------- Sidebar: Upload & Options ----------
-st.sidebar.caption("Welcome to the search engine")
-st.sidebar.header("Upload CSV")
+st.sidebar.caption("Welcome to the Electronic Medical Records User Interface (EMR-UI)")
+st.sidebar.caption(
+    "You can use either built-in modules (Tasy and HCMed) or custom search"
+)
+st.sidebar.header("Custom search : Upload CSV")
 file = st.sidebar.file_uploader(
     "Upload a CSV file with one **rghc** column and one **full_text** column",
     type=["csv"],
@@ -42,11 +43,17 @@ patient_page = st.Page(
     icon=":material/saved_search:",
 )
 
-tazi_page = st.Page(
-    "pages/tazi_ui.py",
-    title="Consult Tazi Records",
+tasy_page = st.Page(
+    "pages/tasy_ui.py",
+    title="Consult Tasy Records",
     icon=":material/deployed_code_account:",
 )
 
-pg = st.navigation([global_page, patient_page, tazi_page])
+exam_page = st.Page(
+    "pages/exams.py",
+    title="Retrieve HCMed lab exams",
+    icon=":material/heart_plus:",
+)
+
+pg = st.navigation([global_page, patient_page, tasy_page, exam_page])
 pg.run()

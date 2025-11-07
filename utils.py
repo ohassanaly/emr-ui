@@ -49,3 +49,8 @@ def highlight_html(s: str, text: str) -> str:
     pattern = re.compile(re.escape(s))
     highlighted = pattern.sub(lambda m: f"<mark>{m.group(0)}</mark>", text)
     return highlighted
+
+
+@st.cache_data
+def convert_for_download(df):
+    return df.to_csv().encode("utf-8")
