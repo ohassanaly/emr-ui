@@ -12,7 +12,7 @@ st.sidebar.caption(
 )
 st.sidebar.header("Custom search : Upload CSV")
 file = st.sidebar.file_uploader(
-    "Upload a CSV file with one **rghc** column and one **full_text** column",
+    "Upload a CSV file with one **rghc** column, one **data** column and one **full_text** column",
     type=["csv"],
     accept_multiple_files=False,
 )
@@ -24,15 +24,25 @@ if file is not None:
     # Fixed column names per user request
     id_col = "rghc"
     text_col = "full_text"
+    date_col = "data"
 
-    if id_col not in df.columns or text_col not in df.columns:
+    if (
+        id_col not in df.columns
+        or text_col not in df.columns
+        or date_col not in df.columns
+    ):
         st.error(
-            f"CSV must contain columns '{id_col}' and '{text_col}'. Found: {', '.join(df.columns)}"
+            f"CSV must contain columns '{id_col}' and '{text_col}' and '{date_col}'. Found: {', '.join(df.columns)}"
         )
         st.stop()
 
     # persist data storage for other pages
-    st.session_state["data"] = {"df": df, "id_col": id_col, "text_col": text_col}
+    st.session_state["data"] = {
+        "df": df,
+        "id_col": id_col,
+        "text_col": text_col,
+        "date_col": date_col,
+    }
 
 global_page = st.Page(
     "pages/global.py", title="Search through all records", icon=":material/search:"

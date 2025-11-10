@@ -10,6 +10,7 @@ data = st.session_state["data"]
 df = data["df"]
 id_col = data["id_col"]
 text_col = data["text_col"]
+date_col = data["date_col"]
 
 # Search controls
 st.header(f"Search words through all the {df.rghc.nunique()} records")
@@ -24,7 +25,7 @@ if query:
             f"{res_df.rghc.nunique()} / {df.rghc.nunique()}  rghc match the search query"
         )
     for index, row in res_df.iterrows():
-        st.markdown(f"**rghc: {row[id_col]}**")
+        st.markdown(f"**rghc: {row[id_col]}** ; **Record date: {row[date_col]}**")
         with st.expander("show context of the match(es)"):
             st.download_button(
                 label="download full text",

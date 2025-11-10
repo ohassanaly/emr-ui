@@ -10,6 +10,7 @@ data = st.session_state["data"]
 df = data["df"]
 id_col = data["id_col"]
 text_col = data["text_col"]
+date_col = data["date_col"]
 
 # Search controls
 st.header("Search for a specific rghc")
@@ -25,6 +26,8 @@ if id_query:
         )
         if word_query:
             text = df[df.rghc == id_query][text_col].squeeze()
+            date = df[df.rghc == id_query][date_col].squeeze()
+            st.markdown(f"**Record date: {date}**")
             st.download_button(
                 label="download full text",
                 data=text.encode("utf-8"),
