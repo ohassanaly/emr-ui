@@ -2,8 +2,8 @@
 
 This project aims at providing a User Interface for several Eletronic Medical Records used at ICHC FMUSP
 
-Most of the project is based on [Streamlit](https://docs.streamlit.io/)
-Fuzzy search is based on [Fuzzysearch](https://pypi.org/project/fuzzysearch/)
+Most of the project is based on [Streamlit](https://docs.streamlit.io/)<br>
+Fuzzy search is based on [Fuzzysearch](https://pypi.org/project/fuzzysearch/)<br>
 ICHC built-in modules rely on the registro package developped by the ICHC team (see below for details)
 
 It includes :
