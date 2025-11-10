@@ -44,7 +44,7 @@ patient_page = st.Page(
 )
 
 tasy_page = st.Page(
-    "pages/tasy_ui.py",
+    "pages/tasy_ui_fuzzy.py",
     title="Consult Tasy Records",
     icon=":material/deployed_code_account:",
 )

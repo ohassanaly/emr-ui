@@ -443,6 +443,7 @@ name = "extract-data"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "fuzzysearch" },
     { name = "pandas" },
     { name = "registro" },
     { name = "streamlit" },
@@ -458,6 +459,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "fuzzysearch", specifier = ">=0.8.0" },
     { name = "pandas", specifier = ">=2.2.3" },
     { name = "registro", path = "registro-2.3.0.tar.gz" },
     { name = "streamlit", specifier = ">=1.51.0" },
@@ -530,6 +532,15 @@ sdist = { url = "https://files.pythonhosted.org/packages/6a/8b/8038d2af289a5cc19
 wheels = [
     { url = "https://files.pythonhosted.org/packages/1a/9d/c2c8b51b32f829a16fe042db30ad1dcef7947bf1dcf77c2cfd7b6f37b83a/formulaic-1.2.1-py3-none-any.whl", hash = "sha256:661d6d2467aa961b9afb3a1e2a187494239793c63eb729e422d1307afa98b43b", size = 117290, upload-time = "2025-09-21T05:27:30.025Z" },
 ]
+
+[[package]]
+name = "fuzzysearch"
+version = "0.8.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "attrs" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e1/d0/a82bb8e4f35e585246e599129700060594da70f4f38e0b3933af03c4c960/fuzzysearch-0.8.0.tar.gz", hash = "sha256:27e13f7f1ec57c4c335752eb22c378254feb81eb67107ef5e3ab0fde0eba266e", size = 39210, upload-time = "2025-05-24T07:36:39.943Z" }
 
 [[package]]
 name = "ghostscript"
