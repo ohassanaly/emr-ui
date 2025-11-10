@@ -10,7 +10,7 @@ It includes :
 
 ### Custom Search
 
-1 upload a CSV with a rghc column (patient_id), a data column (record_date) and a full_text column
+1 upload a CSV with a rghc column (patient_id), a data column (record_date) and a full_text column<br>
 text must be lowercased and accents removed
 
 2 perform a similarity search based on fuzzy matching (using Levhenstein distance)
