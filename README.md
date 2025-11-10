@@ -3,15 +3,17 @@
 This project aims at providing a User Interface for several Eletronic Medical Records used at ICHC FMUSP
 
 Most of the project is based on [Streamlit](https://docs.streamlit.io/)
+Fuzzy search is based on [Fuzzysearch](https://pypi.org/project/fuzzysearch/)
+ICHC built-in modules rely on the registro package developped by the ICHC team (see below for details)
 
 It includes :
 
 ### Custom Search
 
-1 upload a CSV with a rghc column (patient_id) and a full_text column
+1 upload a CSV with a rghc column (patient_id), a data column (record_date) and a full_text column
 text must be lowercased and accents removed
 
-2 perform a search based on regex
+2 perform a similarity search based on fuzzy matching (using Levhenstein distance)
 
 3 visualize results either at cohort level or focusing on one single rghc ;
 tools like highlighting matches and downlaod full text are available
@@ -21,14 +23,15 @@ Nota : during the dev stage, data used was the concatenation of the different fi
 ### ICHC built-in modules
 
 1 Tasy search
-    Based on an extract from registro.tasy, performs json visualisation
+    Based on an extract from registro.tasy, performs json visualisation and fuzzy search
 
 2 HCMed lab exams
     Extract and visualize exam lab results ; based on registro.exames
 
 ___________
 
-Later improvements include adding a similarity / fuzzy text search instead of the regex based current one
+Later improvements include implementing other similarity search tools
+
 Automatic highlighting of entities such as dates
 
 ___________
