@@ -1,12 +1,13 @@
 ## EMR-UI
 
-This project aims at providing a User Interface for several Eletronic Medical Records used at ICHC FMUSP
+This project aims at providing a User Interface (UI) for several Eletronic Medical Records (EMRs) used at ICHC FMUSP
 
 Most of the project is based on [Streamlit](https://docs.streamlit.io/)<br>
 Fuzzy search is based on [Fuzzysearch](https://pypi.org/project/fuzzysearch/)<br>
 ICHC built-in modules rely on the registro package developped by the ICHC team (see below for details)
+In a long term, this project aims to be the UI to access and request data from the EMRs centralized in the ICHC team Datalake.<br>
 
-It includes :
+This project includes :
 
 ### Custom Search
 
@@ -27,6 +28,9 @@ Nota : during the dev stage, data used was the concatenation of the different fi
 
 2 HCMed lab exams
     Extract and visualize exam lab results ; based on registro.exames
+
+3 REDCAP API
+    Based on registro.redcap. Renders API calls results.
 
 ___________
 
